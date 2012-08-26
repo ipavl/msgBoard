@@ -7,3 +7,5 @@ LICENSE
 
 In simple terms: if you use this, please give credit and please do not use it commercially
 without prior permission from me (github.com/ippavlin).
+
+I am not responsible if anything happens via your use of these scripts.

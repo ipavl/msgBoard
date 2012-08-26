@@ -13,7 +13,7 @@
 	/* Database settings */
 	$dbUsername = "root";
 	$dbPassword = "";
-	$dbDatabase = "test_msgboard";
+	$dbDatabase = "msgBoard";
 	$dbServer = "127.0.0.1";
 	
 	/* Database table settings */
