@@ -27,14 +27,26 @@
 					//}
 					while ($db_field = mysql_fetch_assoc($result)){
 						echo '<div id="viewPostContainer">';
-						echo '<div id="viewPostLeftColumn" <!--class="admin"-->';
+						
+						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
+						if($db_field[$rowPassword] == md5(sha1(md5(md5(sha1(md5(sha1("admin"))))))))
+							echo '<div id="viewPostLeftColumn" class="admin">';
+						else
+							echo '<div id="viewPostLeftColumn"';
+						
 						print $db_field[$rowUsername] . "<BR />";
 						echo '</div>';
-						echo '<div id="viewPostRightColumn" <!--class="admin"-->';
-							echo '<div id="viewPostFooter">';
-								print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
-							echo '</div>';
-	
+
+						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
+						if($db_field[$rowPassword] == md5(sha1(md5(md5(sha1(md5(sha1("admin"))))))))
+							echo '<div id="viewPostRightColumn" class="admin">';
+						else
+							echo '<div id="viewPostRightColumn"';
+
+						echo '<div id="viewPostFooter">';
+							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
+						echo '</div>';
+
 							print $db_field[$rowMessage] . "<BR /><BR />";
 						echo '</div>';
 						echo '&nbsp;</div>';

@@ -1,3 +1,9 @@
+# December 23, 2012
+	- moderator posts can now be made by defining a key(s) in includes/function.postmessage.php
+		- Note: changing these keys will cause previously highlighted posts to become unhighlighted as it is currently
+		  based on the key read from the database vs. the one in the postmessage function instead of being saved as a
+		  moderator post.
+
 # Sept 16, 2012
 	- threads are now created using the next available id in the thread_index table instead of a random number 
 	- viewing a forum now correctly shows thread titles and appropriate links
