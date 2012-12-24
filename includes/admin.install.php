@@ -44,6 +44,7 @@
 			$rowUsername text NOT NULL,
 			$rowEmail text NOT NULL,
 			$rowPassword text NOT NULL,
+			$rowIsModerator BOOLEAN NOT NULL default 0,
 			PRIMARY KEY ($rowUID)
 		)";
 		// Execute query

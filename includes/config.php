@@ -31,11 +31,12 @@
 	$rowUID = "user_id";
 	$rowEmail = "email";
 	
-	// These four will be used by both the user and post tables
+	// These variables will be used by both the user and post tables
 	$rowTimestamp = "timestamp";
 	$rowIPAddress = "ip_address";
 	$rowUsername = "username";
 	$rowPassword = "password";
+	$rowIsModerator = "isModerator";
 	
 	/* Link constants */
 	$viewThreadURL = $serverRoot . "/?viewthread=";

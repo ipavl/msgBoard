@@ -28,8 +28,8 @@
 					while ($db_field = mysql_fetch_assoc($result)){
 						echo '<div id="viewPostContainer">';
 						
-						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
-						if($db_field[$rowPassword] == hashPassword("admin"))
+						// Moderator/distinguished post
+						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostLeftColumn" class="admin">';
 						else
 							echo '<div id="viewPostLeftColumn"';
@@ -37,8 +37,8 @@
 						print $db_field[$rowUsername] . "<BR />";
 						echo '</div>';
 
-						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
-						if($db_field[$rowPassword] == hashPassword("admin"))
+						// Moderator/distinguished post
+						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostRightColumn" class="admin">';
 						else
 							echo '<div id="viewPostRightColumn"';

@@ -1,3 +1,4 @@
+- FUNCTIONS. LOTS OF FUNCTIONS TO REDUCE REDUNANCY.
 - move variable defining for viewing things to config so it's not redundant
 - error checks / stop script on error (unless 'or die' does this):
 	- postthread

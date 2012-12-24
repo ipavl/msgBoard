@@ -36,12 +36,17 @@
 		$rowUsername text NOT NULL,
 		$rowPassword text NOT NULL,
 		$rowMessage text NOT NULL,
+		$rowIsModerator BOOLEAN NOT NULL default 0,
 		PRIMARY KEY ($rowPID)
 	)";
 	// Execute query to create thread table
 	mysql_query($sql) or die (mysql_error());
 	
-	$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."')";
+	// Save whether or not the post should be marked as a moderator/distinguished (highlighted) post
+	if($strPassword == hashPassword('admin'))
+		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '1')";
+	else
+		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '0')";
 	
 	mysql_query($query) or die ('<b>Error saving post to database.</b> <br /> ' . mysql_error());
 
