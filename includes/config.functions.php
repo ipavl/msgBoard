@@ -1,4 +1,10 @@
 <?php
+	function hashPassword($password) {
+		$password = md5(sha1(md5(md5(sha1(md5(sha1($_POST['frmPassword'])))))));
+		
+		return $password;
+	}
+
 	function getDirectoryURL() { 
 		$pageURL = 'http'; 
 		if (!empty($_SERVER['HTTPS'])) {

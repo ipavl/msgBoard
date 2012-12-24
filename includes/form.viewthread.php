@@ -29,7 +29,7 @@
 						echo '<div id="viewPostContainer">';
 						
 						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
-						if($db_field[$rowPassword] == md5(sha1(md5(md5(sha1(md5(sha1("admin"))))))))
+						if($db_field[$rowPassword] == hashPassword("admin"))
 							echo '<div id="viewPostLeftColumn" class="admin">';
 						else
 							echo '<div id="viewPostLeftColumn"';
@@ -38,7 +38,7 @@
 						echo '</div>';
 
 						// Moderator post if the entered password is correct (TODO: This will break upon changing passwords)
-						if($db_field[$rowPassword] == md5(sha1(md5(md5(sha1(md5(sha1("admin"))))))))
+						if($db_field[$rowPassword] == hashPassword("admin"))
 							echo '<div id="viewPostRightColumn" class="admin">';
 						else
 							echo '<div id="viewPostRightColumn"';

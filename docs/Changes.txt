@@ -1,3 +1,6 @@
+# December 24, 2012
+	- passwords can now be hashed via hashPassword(str) as long as config.functions.php is included (implied when config.php is)
+
 # December 23, 2012
 	- moderator posts can now be made by defining a key(s) in includes/function.postmessage.php
 		- Note: changing these keys will cause previously highlighted posts to become unhighlighted as it is currently

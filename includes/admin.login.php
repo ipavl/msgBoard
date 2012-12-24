@@ -10,13 +10,13 @@
 	$myusername=$_POST['lgnUsername'];
 	$mypassword=$_POST['lgnPassword'];
 
-	// To protect MySQL injection
+	// To protect from MySQL injection
 	$myusername = stripslashes($myusername);
 	$mypassword = stripslashes($mypassword);
 	$myusername = mysql_real_escape_string($myusername);
 	$mypassword = mysql_real_escape_string($mypassword);
 
-	$mypassword = md5(sha1(md5(md5(sha1(md5(sha1($mypassword)))))));
+	$mypassword = hashPassword($mypassword);
 	
 	$sql="SELECT * FROM $tblUsers WHERE username='$myusername' and password='$mypassword'";
 	$result=mysql_query($sql);

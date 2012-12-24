@@ -84,7 +84,7 @@
 		echo 'Adding administrative user...';
 		$date = strftime('%c');
 		$strUsername = $admUsername;
-		$strPassword = md5(sha1(md5(md5(sha1(md5(sha1($admPassword)))))));
+		$strPassword = hashPassword($admPassword);
 		$strEmail = $admEmail;
 		$strIPAddress = getClientIP();
 

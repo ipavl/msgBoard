@@ -3,7 +3,7 @@
 	
 	$date = strftime('%c');
 	$strUsername = $_POST['frmUsername'];
-	$strPassword = md5(sha1(md5(md5(sha1(md5(sha1($_POST['frmPassword'])))))));
+	$strPassword = hashPassword($_POST['frmPassword']);
 	$strThread = $_POST['frmThread'];
 	$strMessage = $_POST['frmMessage'];
 	$strIPAddress = getClientIP();
