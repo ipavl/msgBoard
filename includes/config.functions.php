@@ -1,6 +1,6 @@
 <?php
 	function hashPassword($password) {
-		$password = md5(sha1(md5(md5(sha1(md5(sha1($_POST['frmPassword'])))))));
+		$password = md5(sha1(md5(md5(sha1(md5(sha1($password)))))));
 		
 		return $password;
 	}
