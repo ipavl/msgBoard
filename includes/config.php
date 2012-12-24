@@ -1,0 +1,42 @@
+<?php
+	require_once('config.functions.php');
+	
+	/* Server settings */
+	$serverRoot = getDirectoryURL();
+	
+	/* Application settings */
+	$appSiteName = "Derp Co. Forums";
+	$appLicensedTo = "Unlicensed copy";
+	$appVersion = "v0.2-alpha";
+	$appShowVersion = true;
+	$appShowAdminButton = true;
+	
+	/* Administrative settings */
+	$admUsername = "admin";
+	$admPassword = "msgboard";
+	$admEmail = "admin@locahost";
+	
+	/* Database settings */
+	$dbUsername = "root";
+	$dbPassword = "";
+	$dbDatabase = "test_msgboard";
+	$dbServer = "127.0.0.1";
+	
+	/* Database table settings */
+	$rowPID = "post_id";
+	$rowThread = "thread";
+	$rowMessage = "message";
+	
+	$tblUsers = "users";
+	$rowUID = "user_id";
+	$rowEmail = "email";
+	
+	// These four will be used by both the user and post tables
+	$rowTimestamp = "timestamp";
+	$rowIPAddress = "ip_address";
+	$rowUsername = "username";
+	$rowPassword = "password";
+	
+	/* Link constants */
+	$viewThreadURL = $serverRoot . "/?viewthread=";
+?>

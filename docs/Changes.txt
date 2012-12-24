@@ -1,0 +1,16 @@
+# Sept 16, 2012
+	- threads are now created using the next available id in the thread_index table instead of a random number 
+	- viewing a forum now correctly shows thread titles and appropriate links
+	
+# Sept 15, 2012
+	- removed thread titles from being stored in the thread table in favour of a thread_index table
+	- updated install script to include creation of a thread_index table to store thread titles
+	- began working on getting next AUTO_INCREMENT value from thread_index table
+
+# Sept 9, 2012
+	- added check to see if thread table exists for the specified thread
+	- posting a thread will now output the correct link to view the thread
+	- removed view post references since posts are now stored in per-thread tables, not a massive, site-wide posts table
+
+# Sept 8, 2012
+	- converted miscellaneous post submission pages into included functions so they fit in better

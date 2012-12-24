@@ -1,0 +1,33 @@
+#viewPostLeftColumn {
+    float: left;
+    padding: 5px;
+    width: 15%;
+    border: 1px solid gray;
+	background-color: #18188D;
+}
+
+#viewPostLeftColumn.admin {
+    background-color: #8D1818;
+}
+
+#viewPostRightColumn {
+    float: right;
+    padding: 5px;
+	width: 80%;
+    border: 1px solid gray;
+	background-color: #18188D;
+}
+
+#viewPostRightColumn.admin {
+    background-color: #8D1818;
+}
+
+#viewPostContainer {
+	margin-bottom: auto;	/* TODO: Make this look proper regardless of post size*/
+}
+
+#viewPostFooter {
+	text-align: right;
+	clear: both;
+	font-size: 70%;
+}

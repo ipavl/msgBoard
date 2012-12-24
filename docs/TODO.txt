@@ -1,0 +1,10 @@
+- move variable defining for viewing things to config so it's not redundant
+- error checks / stop script on error (unless 'or die' does this):
+	- postthread
+- prevent/enforce protection against SQL injections/hacks:
+	- possibly replace current sterilizing funcetion with
+		mysql_real_escape_string(strip_tags(trim($_POST['frmUsername'])));
+	
+Retired / low priority:
+	- make viewpost have 'scroll arrows' to go to prev/next post (hopefully seemlessly) -- Maybe not if using a normal thread/forum list
+		- could maybe be re-introduced if single-post viewing is re-implemented 
