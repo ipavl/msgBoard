@@ -1,5 +1,6 @@
 <?php
 	require_once('config.php');
+	require_once('postfunctions.php');
 	
 	$date = strftime('%c');
 	$strUsername = $_POST['frmUsername'];
@@ -10,10 +11,6 @@
 
 	mysql_connect ($dbServer, $dbUsername, $dbPassword) or die ('<b>Database connection error: </b> ' . mysql_error());
 	mysql_select_db ($dbDatabase);
-	
-	// This line is commented out because we don't want random ids in production a production enviornment since it
-	// makes it harder to figure out which topics are older.
-	//$threadID = "thread_" . rand();
 	
 	// Get the next available id in the thread_index table
 	// Note: this should almost always work unless there is a delay in adding a thread and another user ninjas a thread in
@@ -50,15 +47,5 @@
 	
 	mysql_query($query) or die ('<b>Error saving post to database.</b> <br /> ' . mysql_error());
 
-	echo "Your thread has been created <b>successfully</b> with the following details: <br /><br />";
-
-	echo "<b>Username:</b> " . $strUsername . "<br />";
-	echo "<b>Password:</b> " . $strPassword . "<br />";
-	echo "<b>IP Address:</b> " . $strIPAddress . "<br />";
-	echo "<b>Thread Title:</b> " . $strThread . "<br /><br />";
-	echo "<b>Message:</b> " . $strMessage . "<br /><br />";
-
-	echo "<b>Time:</b> " . $date . "<br /><br />";
-	
-	echo "View at: <b><a href=\"" . $viewThreadURL . $threadID . "\">" . $viewThreadURL . $threadID . "</a></b>";
+	postSuccess($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID);
 ?>
