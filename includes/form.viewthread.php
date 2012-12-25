@@ -32,7 +32,7 @@
 						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostLeftColumn" class="admin">';
 						else
-							echo '<div id="viewPostLeftColumn"';
+							echo '<div id="viewPostLeftColumn">';
 						
 						print $db_field[$rowUsername] . "<BR />";
 						echo '</div>';
@@ -41,7 +41,7 @@
 						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostRightColumn" class="admin">';
 						else
-							echo '<div id="viewPostRightColumn"';
+							echo '<div id="viewPostRightColumn">';
 
 						echo '<div id="viewPostFooter">';
 							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
