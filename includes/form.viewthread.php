@@ -35,7 +35,17 @@
 						else
 							echo '<div id="viewPostLeftColumn">';
 						
-						print $db_field[$rowUsername] . "<BR />";
+						// Trim username to avoid stretching the left column 
+						// TODO: IMPROVE
+						$user = $db_field[$rowUsername];
+						$max_chars = 12;
+						if(!strpos($user, " "))	// if it does not contain any spaces, trim it to 12 characters
+							$user = substr($user, 0, $max_chars);
+						else					// if it contains spaces, word-wrap it
+							$user = wordwrap($user, $max_chars, "<br />");
+						
+						print $user . "<BR />";
+						
 						echo '</div></td><td>';
 
 						// Moderator/distinguished post
@@ -48,6 +58,7 @@
 							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
 						echo '</div>';
 
+						// TODO: Avoid stretching of this column (e.g. word wrap messages that lack spaces)
 						print $db_field[$rowMessage] . "<BR /><BR />";
 						
 						echo '</div>';

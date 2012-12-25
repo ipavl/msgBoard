@@ -5,7 +5,7 @@
 	<?php
 		echo 'Licensed to: ' . $appLicensedTo . '.<br />';
 	?>
-	Powered by <a href="https://github.com/ippavlin/msgBoard">msgBoard</a>. Copyright ©2012 ipavl. All rights reserved.
+	Powered by <a href="https://github.com/ipavl/msgboard">msgBoard</a>. Copyright ©2012 ipavl. All rights reserved.
 
 </div>
 <div id="bottom-right">
