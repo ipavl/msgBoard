@@ -25,8 +25,9 @@
 					//while ($db_field_title = mysql_fetch_assoc($result)){
 					//	print "Viewing $num_rows post(s) in thread '" . $db_field_title[$rowThread] . "'.<P>";	
 					//}
+					echo '<table width="100%">';
 					while ($db_field = mysql_fetch_assoc($result)){
-						echo '<div id="viewPostContainer">';
+						echo '<tr valign="top"><td>';
 						
 						// Moderator/distinguished post
 						if($db_field[$rowIsModerator] == 1)
@@ -35,7 +36,7 @@
 							echo '<div id="viewPostLeftColumn">';
 						
 						print $db_field[$rowUsername] . "<BR />";
-						echo '</div>';
+						echo '</div></td><td>';
 
 						// Moderator/distinguished post
 						if($db_field[$rowIsModerator] == 1)
@@ -47,10 +48,13 @@
 							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
 						echo '</div>';
 
-							print $db_field[$rowMessage] . "<BR /><BR />";
+						print $db_field[$rowMessage] . "<BR /><BR />";
+						
 						echo '</div>';
-						echo '&nbsp;</div>';
+						
+						echo '</td></tr>';
 					}
+					echo '</table>';
 				}
 				else
 				{

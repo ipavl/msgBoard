@@ -1,9 +1,11 @@
 #viewPostLeftColumn {
     float: left;
     padding: 5px;
-    width: 15%;
+    width: 124%;
     border: 1px solid gray;
 	background-color: #18188D;
+	font-size: 70%;
+	font-weight: bold;
 }
 
 #viewPostLeftColumn.admin {
@@ -13,21 +15,18 @@
 #viewPostRightColumn {
     float: right;
     padding: 5px;
-	width: 80%;
+	width: 93%;
     border: 1px solid gray;
 	background-color: #18188D;
+	font-size: 70%;
 }
 
 #viewPostRightColumn.admin {
     background-color: #8D1818;
 }
 
-#viewPostContainer {
-	margin-bottom: auto;	/* TODO: Make this look proper regardless of post size*/
-}
-
 #viewPostFooter {
 	text-align: right;
 	clear: both;
-	font-size: 70%;
+	color: #B9B9B9;
 }
