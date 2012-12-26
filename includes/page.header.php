@@ -13,21 +13,16 @@
 	<body>
 
 	<div id="top-left">
+	Powered by <a href="https://bitbucket.org/ordona/msgboard">msgBoard</a>. Copyright ©2012 Ian Pavlinic. All rights reserved.
+	<br />
 	<?php
-		if ($appShowVersion)
-		{
-			echo $appVersion;
-		}
+		echo 'Licensed to: ' . $appLicensedTo . '.<br />';
 	?>
 	</div>
 
 	<div id="top-right">
-		<?php
-			if ($appShowAdminButton)
-			{
-				echo '<INPUT TYPE="button" onClick="parent.location=\'?admin\'" value="Administration Panel">';
-			}
-		?>
+		Your IP Address will be logged along with your message for legal reasons, and will only be shown to administration staff once the final product is ready.
+		However, during this pre-release stage, logged IP addresses may be visible to anyone who is participating in the development or testing processes.
 	</div>
 	
 	<div id="logo">

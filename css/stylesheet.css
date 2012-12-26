@@ -63,7 +63,7 @@ a  { color: skyblue; }
 	top: 5px;
 	width: 45%;
 	height: auto;
-	font: bolder 18px tahoma, sans-serif;
+	font: bolder 9px tahoma, sans-serif;
 	color: white;
 	}
 #top-right {
@@ -74,7 +74,7 @@ a  { color: skyblue; }
 	right: 5px;
 	width: 45%;
 	height: auto;
-	font: bolder 18px tahoma, sans-serif;
+	font: bolder 9px tahoma, sans-serif;
 	color: white;
 	}
 #bottom-left {
@@ -85,7 +85,7 @@ a  { color: skyblue; }
 	bottom: 5px;
 	width: 45%;
 	height: auto;
-	font: bolder 9px tahoma, sans-serif;
+	font: bolder 18px tahoma, sans-serif;
 	color: white;
 	}
 #bottom-right {
@@ -96,7 +96,7 @@ a  { color: skyblue; }
 	right: 5px;
 	width: 45%;
 	height: auto;
-	font: bolder 9px tahoma, sans-serif;
+	font: bolder 18px tahoma, sans-serif;
 	color: white;
 	}
 	
