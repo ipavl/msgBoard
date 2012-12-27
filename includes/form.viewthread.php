@@ -46,7 +46,7 @@
 						else					// if it contains spaces, word-wrap it
 							$user = wordwrap($user, $max_chars, "<br />");
 						
-						print $user . "<BR />";
+						print $user;
 						
 						echo '</div></td><td>';
 
@@ -59,9 +59,12 @@
 							echo '<div id="viewPostRightColumn">';
 
 						echo '<div id="viewPostFooter">';
-							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
+							// The post "footer" - the top line is what staff will see in the final version (maybe not password hash)
+							//print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
+							print $db_field[$rowTimestamp];
+							
 							if ($db_field[$rowIsVerified] == 1)
-								print " || <b>Verified</b>";
+								print " (<b>Verified user</b>)";
 						echo '</div>';
 
 						// TODO: Avoid stretching of this column (e.g. word wrap messages that lack spaces)
