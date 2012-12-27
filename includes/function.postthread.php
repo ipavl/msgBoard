@@ -40,11 +40,19 @@
 	mysql_query($sql) or die (mysql_error());
 	
 	// Save whether or not the post should be marked as a moderator/distinguished (highlighted) post
-	if($strPassword == hashPassword($admPassword))
+	// Read user's moderator status from database
+	$sql = "SELECT isModerator FROM users WHERE username='$strUsername' LIMIT 1";
+	$result = mysql_query($sql) or die(mysql_error());
+	$row = mysql_fetch_assoc($result);
+	//print_r($row);	// debug: print hashed password from database
+	$isModeratorFromDB = $row['isModerator'];
+	
+	// Save whether or not the post was from the "correct" person (verified user)
+	if($isModeratorFromDB == 1)
 		$isModerator = true;
 	else
 		$isModerator = false;
-	
+		
 	// Read user's password from database
 	$sql = "SELECT password FROM users WHERE username='$strUsername' LIMIT 1";
 	$result = mysql_query($sql) or die(mysql_error());
