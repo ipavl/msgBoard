@@ -44,5 +44,5 @@
 	
 	mysql_close($connect);
 	
-	echo '<br /><a href="?admin">&lt; Return to administration panel</a>';
+	echo '<br /><a href="./">&lt; Return to index</a>';
 ?>

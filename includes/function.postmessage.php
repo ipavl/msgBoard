@@ -19,15 +19,29 @@
 		$isModerator = true;
 	else
 		$isModerator = false;
-
+	
+	// Read user's password from database
+	$sql = "SELECT password FROM users WHERE username='$strUsername' LIMIT 1";
+	$result = mysql_query($sql) or die(mysql_error());
+	$row = mysql_fetch_assoc($result);
+	//print_r($row);	// debug: print hashed password from database
+	$strPassFromDB = $row['password'];
+	
 	// Save whether or not the post was from the "correct" person (verified user)
-	// TODO: Verify password against that stored in user database to determine whether the user is who they say they are
-	if($strPassword == hashPassword($rowPassword))
+	if($strPassword == $strPassFromDB)
 		$isVerified = true;
 	else
 		$isVerified = false;
 	
-	addPost($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator, $isVerified);
+	// Save post
+	if($isModerator)		// Moderator post
+		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator, $rowIsVerified) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '1', '1')";
+	else if ($isVerified)	// Verified user
+		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator, $rowIsVerified) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '0', '1')";
+	else					// Unverified user
+		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator, $rowIsVerified) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '0', '0')";
+	
+	//addPost($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator, $isVerified);
 	
 	mysql_query($query) or die ('<b>Error saving post to database.</b> <br /> ' . mysql_error());
 

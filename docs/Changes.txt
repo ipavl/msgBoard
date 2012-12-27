@@ -1,6 +1,8 @@
 # December 27, 2012
 	- accounts can now be registered
 		- TODO: prevent duplicate registrations of the same name
+	- user verification now works!
+		- posts will include a "Verified" marker next to the date/IP/password hash of a post if verification was successsful
 
 # December 26, 2012
 	- board name, admin panel button, and version info (if enabled) are now located in a static bar at the top of the screen

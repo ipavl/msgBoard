@@ -45,7 +45,7 @@
 	else
 		$isModerator = false;
 	
-	addPost($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator);
+	addPost($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator, $isVerified);
 	
 	mysql_query($query) or die ('<b>Error saving post to database.</b> <br /> ' . mysql_error());
 
