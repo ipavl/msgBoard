@@ -76,6 +76,8 @@
 						echo '</td></tr>';
 					}
 					echo '</table></p>';
+					
+					echo '<center><a href="?post&thread=' . $id.substr(6, 6) . '">Reply to thread</a></center>';
 				}
 				else
 				{
