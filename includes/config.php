@@ -37,6 +37,7 @@
 	$rowUsername = "username";
 	$rowPassword = "password";
 	$rowIsModerator = "isModerator";
+	$rowIsVerified = "isVerified";
 	
 	/* Link constants */
 	$viewThreadURL = $serverRoot . "/?viewthread=";

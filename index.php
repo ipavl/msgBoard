@@ -95,6 +95,36 @@
 	{
 		include('includes/function.postthread.php');
 	}
+	elseif (isset($_GET['register']))	// registration page
+	{
+		echo '<div id="post">';
+		echo '<h2 align="center">Account Registration</h2>';
+		echo '<form method="post" action="?register2">';
+		
+		echo '<label for="frmUsername" class="required">Username:</label>';
+		echo '<input type="text" name="frmUsername" /> <br />';
+		
+		echo '<label for="frmEmail" class="required">Email:</label>';
+		echo '<input type="text" name="frmEmail" /> <br /><br />';
+		
+		echo '<label for="frmPassword" class="required">Password:</label>';
+		echo '<input type="password" name="frmPassword" /> <br /><br />';
+
+		/*echo '<label for="confirm" class="required">&nbsp;</label>';
+		echo '<input type="checkbox" name="confirm" value="confirm" onClick="confirmRegister(this)">';
+		echo 'I agree to the <a href="terms.php">Terms of Service</a> and that the above information is correct.';
+		echo '<br /><br />';*/
+
+		echo '<label for="submit">&nbsp;</label>';
+		echo '<input name="submit" type="submit" value="Post" class="submit-button" />';
+
+		echo '</form>';
+		echo '</div>';
+	}
+	elseif (isset($_GET['register2']))	// registration page
+	{
+		include('includes/user.register.php');
+	}
 	elseif (isset($_GET['tos']))	// terms of service page
 	{
 		include('includes/page.tos.php');

@@ -21,6 +21,7 @@
 		
 		<div id="top-right">
 			<?php
+				echo '<INPUT TYPE="button" onClick="parent.location=\'?register\'" value="Register">';
 				if ($appShowAdminButton)
 					echo '<INPUT TYPE="button" onClick="parent.location=\'?admin\'" value="Administration Panel">';
 			?>

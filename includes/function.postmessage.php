@@ -16,11 +16,20 @@
 
 	// Save whether or not the post should be marked as a moderator/distinguished (highlighted) post
 	if($strPassword == hashPassword($admPassword))
-		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '1')";
+		$isModerator = true;
 	else
-		$query = "INSERT INTO $threadID ($rowPID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowPassword, $rowMessage, $rowIsModerator) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strPassword)."', '".mysql_real_escape_string($strMessage)."', '0')";
+		$isModerator = false;
+
+	// Save whether or not the post was from the "correct" person (verified user)
+	// TODO: Verify password against that stored in user database to determine whether the user is who they say they are
+	if($strPassword == hashPassword($rowPassword))
+		$isVerified = true;
+	else
+		$isVerified = false;
+	
+	addPost($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator, $isVerified);
 	
 	mysql_query($query) or die ('<b>Error saving post to database.</b> <br /> ' . mysql_error());
 
-	postSuccess($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID);
+	postSuccess($strUsername, $strPassword, $strIPAddress, $strThread, $strMessage, $date, $threadID, $isModerator);
 ?>

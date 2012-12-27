@@ -19,7 +19,7 @@
 				$SQL = "SELECT * FROM $tblThread";
 				$result = mysql_query($SQL);
 				$num_rows = mysql_num_rows($result);
-				print "Viewing $num_rows post(s) in thread.<P>";
+				print "Viewing $num_rows post(s) in thread: <b><a href=\"?viewthread=" . $id . "\">THREAD_NAME_HERE</a></b><p>";
 				if ($id != null) {
 					// TODO: get thread title while also getting posts
 					//while ($db_field_title = mysql_fetch_assoc($result)){
@@ -56,6 +56,8 @@
 
 						echo '<div id="viewPostFooter">';
 							print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
+							if ($db_field[$rowIsVerified] == 1)
+								print " || <b>Verified</b>";
 						echo '</div>';
 
 						// TODO: Avoid stretching of this column (e.g. word wrap messages that lack spaces)
@@ -65,7 +67,7 @@
 						
 						echo '</td></tr>';
 					}
-					echo '</table>';
+					echo '</table></p>';
 				}
 				else
 				{
