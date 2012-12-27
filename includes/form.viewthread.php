@@ -59,12 +59,13 @@
 							echo '<div id="viewPostRightColumn">';
 
 						echo '<div id="viewPostFooter">';
-							// The post "footer" - the top line is what staff will see in the final version (maybe not password hash)
+							// The post "footer"
+							if ($db_field[$rowIsVerified] == 1)
+								print "<b>Verified</b> - ";
+							
+							// the top line is what staff will see in the final version (password hash for admins only? Depends if there's a "login" feature)
 							//print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
 							print $db_field[$rowTimestamp];
-							
-							if ($db_field[$rowIsVerified] == 1)
-								print " (<b>Verified user</b>)";
 						echo '</div>';
 
 						// TODO: Avoid stretching of this column (e.g. word wrap messages that lack spaces)
