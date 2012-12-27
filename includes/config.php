@@ -7,7 +7,7 @@
 	/* Application settings */
 	$appSiteName = "Derp Co. Forums";
 	$appLicensedTo = "Unlicensed copy";
-	$appVersion = "v0.2.3-alpha";
+	$appVersion = "v0.3a";
 	$appShowVersion = true;
 	$appShowAdminButton = true;
 	

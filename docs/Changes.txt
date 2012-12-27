@@ -1,6 +1,9 @@
 # December 26, 2012
 	- board name, admin panel button, and version info (if enabled) are now located in a static bar at the top of the screen
-	- copyright notice is now behind the main container (TODO: move to bottom of thread outside container?)
+	- copyright notice is now behind the main container
+	- cleaned up UI
+		- copyright notice is now located below page container
+		- page container is no longer some weird floaty thing (why did I do that again?)
 
 # December 24, 2012
 	- passwords can now be hashed via hashPassword(str) as long as config.functions.php is included (implied when config.php is)
