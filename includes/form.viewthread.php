@@ -69,7 +69,7 @@
 							
 							// the top line is what staff will see in the final version (password hash for admins only? Depends if there's a "login" feature)
 							//print $db_field[$rowTimestamp] . " || " . $db_field[$rowIPAddress] . " || " . $db_field[$rowPassword];
-							print $db_field[$rowTimestamp];
+							print $db_field[$rowTimestamp] . ' - #<a id="post' . $db_field[$rowPID] .'" href="?viewthread=' . $id . '#post' . $db_field[$rowPID] .'">' . $db_field[$rowPID] . '</a>';
 						echo '</div>';
 
 						// TODO: Avoid stretching of this column (e.g. word wrap messages that lack spaces)
