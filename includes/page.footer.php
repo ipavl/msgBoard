@@ -1,22 +1,12 @@
-	</div>
 </div>
 
-<div id="bottom-left">
+<div id="copyright-notice">
 	<?php
-		if ($appShowVersion)
-		{
-			echo $appVersion;
-		}
+		echo 'Licensed to: ' . $appLicensedTo . '.<br />';
 	?>
+	Powered by <a href="https://github.com/ipavl/msgboard">msgBoard</a>. Copyright ©2012 ipavl. All rights reserved.
 </div>
-<div id="bottom-right">
-	<?php
-		if ($appShowAdminButton)
-		{
-			echo '<INPUT TYPE="button" onClick="parent.location=\'?admin\'" value="Administration Panel">';
-		}
-	?>
-</div>
+
 </body>
 
 </html>

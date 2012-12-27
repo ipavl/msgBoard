@@ -12,17 +12,23 @@
 
 	<body>
 
-	<div id="top-left">
-	Powered by <a href="https://bitbucket.org/ordona/msgboard">msgBoard</a>. Copyright ©2012 Ian Pavlinic. All rights reserved.
-	<br />
-	<?php
-		echo 'Licensed to: ' . $appLicensedTo . '.<br />';
-	?>
-	</div>
-
-	<div id="top-right">
-		Your IP Address will be logged along with your message for legal reasons, and will only be shown to administration staff once the final product is ready.
-		However, during this pre-release stage, logged IP addresses may be visible to anyone who is participating in the development or testing processes.
+	<div id="top-header">
+		<div id="top-left">
+			<?php
+				echo "<a href=\"./\">" . $appSiteName . "</a> - Powered by <a href=\"https://bitbucket.org/ordona/msgboard\">msgBoard</a>";
+				if ($appShowVersion)
+					echo "&nbsp;" . $appVersion;
+			?>
+		</div>
+		
+		<div id="top-right">
+			<?php
+				if ($appShowAdminButton)
+				{
+					echo '<INPUT TYPE="button" onClick="parent.location=\'?admin\'" value="Administration Panel">';
+				}
+			?>
+		</div>
 	</div>
 	
 	<div id="logo">
@@ -30,4 +36,3 @@
 	</div>
 
 	<div id="container">
-		<div id="content">

@@ -1,3 +1,7 @@
+# December 26, 2012
+	- board name, admin panel button, and version info (if enabled) are now located in a static bar at the top of the screen
+	- copyright notice is now behind the main container (TODO: move to bottom of thread outside container?)
+
 # December 24, 2012
 	- passwords can now be hashed via hashPassword(str) as long as config.functions.php is included (implied when config.php is)
 	- moderator posts are now saved as distinguished when they are posted to the database as opposed to at read time
