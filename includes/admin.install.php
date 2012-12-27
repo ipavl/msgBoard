@@ -89,7 +89,7 @@
 		$strEmail = $admEmail;
 		$strIPAddress = getClientIP();
 
-		$query = "INSERT INTO $tblUsers ($rowUID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowEmail, $rowPassword) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strEmail)."', '".mysql_real_escape_string($strPassword)."')";
+		$query = "INSERT INTO $tblUsers ($rowUID, $rowTimestamp, $rowIPAddress, $rowUsername, $rowEmail, $rowPassword, $rowIsModerator) VALUES ('', '$date', '$strIPAddress', '".mysql_real_escape_string($strUsername)."', '".mysql_real_escape_string($strEmail)."', '".mysql_real_escape_string($strPassword)."', '1')";
 		
 		// Execute query
 		if (mysql_query($query, $connect))
