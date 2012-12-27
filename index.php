@@ -137,6 +137,10 @@
 	{
 		include('includes/page.tos.php');
 	}
+	elseif (isset($_GET['faq']))	// faq page
+	{
+		include('includes/page.faq.php');
+	}
 	elseif (isset($_GET['admin']))	// administration pages
 	{
 		$event = $_GET['admin'];
