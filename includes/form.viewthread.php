@@ -77,7 +77,7 @@
 					}
 					echo '</table></p>';
 					
-					echo '<center><a href="?post&thread=' . $id.substr(6, 6) . '">Reply to thread</a></center>';
+					echo '<center><a href="?post&thread=' . substr($id, 7) . '">Reply to thread</a></center>';
 				}
 				else
 				{
