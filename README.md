@@ -11,7 +11,7 @@ INSTALLATION
 	- Application settings
 	- Administrative settings
 	- Database settings
-   * the other sections are usually fine with the default values)
+    - the other sections are usually fine with the default values
  - in your web browser, navigate to www.yoursite.com/directory, and click on the
    "Administration Panel" button in the top right, or alternatively navigate to
    www.yoursite.com/directory/?admin directly.
