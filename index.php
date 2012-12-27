@@ -34,12 +34,20 @@
 		echo '<div id="post">';
 		echo '<h2 align="center">Post Reply</h2>';
 		echo '<form method="post" action="?post_message">';
+
 		echo '<label for="frmUsername" class="required">Username:</label>';
 		echo '<input type="text" name="frmUsername" /> <br />';
+
 		echo '<label for="frmPassword" class="required">Password:</label>';
 		echo '<input type="password" name="frmPassword" /> <br /><br />';
+
 		echo '<label for="frmThread" class="required">Thread ID:</label>';
-		echo '<input type="text" name="frmThread" /> <br /><br />';
+		// Auto-fill the thread ID box?
+		if (isset($_GET['thread']))
+			echo '<input type="text" name="frmThread" value="' . $_GET['thread'] . '"/> <br /><br />';			
+		else
+			echo '<input type="text" name="frmThread" /> <br /><br />';	
+
 		echo '<label for="frmMessage" class="required">Message:</label>';
 		echo '<textarea name="frmMessage" /></textarea> <br /><br />';
 
