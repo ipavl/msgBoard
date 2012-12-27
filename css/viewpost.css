@@ -12,6 +12,10 @@
     background-color: #8D1818;
 }
 
+#viewPostLeftColumn.verified {
+    background-color: #10105E;
+}
+
 #viewPostRightColumn {
     float: right;
     padding: 5px;
@@ -23,6 +27,10 @@
 
 #viewPostRightColumn.admin {
     background-color: #8D1818;
+}
+
+#viewPostRightColumn.verified {
+    background-color: #10105E;
 }
 
 #viewPostFooter {

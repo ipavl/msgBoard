@@ -32,6 +32,8 @@
 						// Moderator/distinguished post
 						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostLeftColumn" class="admin">';
+						else if($db_field[$rowIsVerified] == 1)
+							echo '<div id="viewPostLeftColumn" class="verified">';
 						else
 							echo '<div id="viewPostLeftColumn">';
 						
@@ -51,6 +53,8 @@
 						// Moderator/distinguished post
 						if($db_field[$rowIsModerator] == 1)
 							echo '<div id="viewPostRightColumn" class="admin">';
+						else if($db_field[$rowIsVerified] == 1)
+							echo '<div id="viewPostRightColumn" class="verified">';
 						else
 							echo '<div id="viewPostRightColumn">';
 
