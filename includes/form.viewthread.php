@@ -46,7 +46,11 @@
 						else					// if it contains spaces, word-wrap it
 							$user = wordwrap($user, $max_chars, "<br />");
 						
-						print $user;
+						// Print username
+						echo '<b>' . $user . '</b><br />';
+						
+						if($db_field[$rowIsModerator] == 1)
+							echo '<abbr title="This user is involved with moderating (removing inappropriate) posts on the forum.">Forum Mod</abbr>';
 						
 						echo '</div></td><td>';
 
