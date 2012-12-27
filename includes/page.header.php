@@ -15,18 +15,14 @@
 	<div id="top-header">
 		<div id="top-left">
 			<?php
-				echo "<a href=\"./\">" . $appSiteName . "</a> - Powered by <a href=\"https://bitbucket.org/ordona/msgboard\">msgBoard</a>";
-				if ($appShowVersion)
-					echo "&nbsp;" . $appVersion;
+				echo "<a href=\"./\">" . $appSiteName . "</a>";
 			?>
 		</div>
 		
 		<div id="top-right">
 			<?php
 				if ($appShowAdminButton)
-				{
 					echo '<INPUT TYPE="button" onClick="parent.location=\'?admin\'" value="Administration Panel">';
-				}
 			?>
 		</div>
 	</div>

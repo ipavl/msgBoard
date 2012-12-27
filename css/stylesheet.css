@@ -63,10 +63,9 @@ a { color: skyblue; }
 	background: rgba(30, 30, 30, 0.75);
     top: 0px;
     left: 0px;
-    color: white;
     width: 100%;
-    height: auto;
-    font: bolder 9px tahoma, sans-serif;
+    height: 27px;
+    font: bolder 9px white tahoma, sans-serif;
     z-index: 10;
 	}
 
