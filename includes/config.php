@@ -41,4 +41,5 @@
 	
 	/* Link constants */
 	$viewThreadURL = $serverRoot . "/?viewthread=";
+	$rowMessage = "message";
 ?>

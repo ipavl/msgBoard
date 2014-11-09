@@ -13,7 +13,7 @@
 				$pageURL .= "s";
 			}
 		}
-		
+
 		$pageURL .= "://"; 
 		
 		if ($_SERVER["SERVER_PORT"] != "80") { 
@@ -21,7 +21,7 @@
 		} else { 
 			$pageURL .= $_SERVER["SERVER_NAME"].dirname($_SERVER['PHP_SELF']); 
 		} 
-		
+
 		return $pageURL; 
 	}
 	
@@ -36,7 +36,7 @@
 			$ip = getenv("REMOTE_ADDR"); 
 		else 
 			$ip = "UNKNOWN";
-		
+
 		return $ip; 
 	}
 ?>
